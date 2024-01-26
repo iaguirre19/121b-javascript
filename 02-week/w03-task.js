@@ -76,7 +76,11 @@ const applyingDiscount = (subTotal, discount) =>
 const getTotalDue = () => {
   const subTotalValue = Number(document.querySelector("#subtotal").value);
   const hasDiscount = checkMember();
-  document.querySelector("#total").textContent = applyingDiscount(subTotalValue, hasDiscount ? 20 : 0);
+  const totalDue = applyingDiscount(subTotalValue, hasDiscount ? 20 : 0);
+  const formattedTotal = "$" + totalDue.toFixed(2);
+
+  document.querySelector("#total").textContent = formattedTotal;
+  
 };
 
 document.querySelector("#getTotal").addEventListener("click", getTotalDue)
