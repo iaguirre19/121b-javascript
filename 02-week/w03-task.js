@@ -67,15 +67,57 @@ document
 /* Decision Structure */
 
 
+const checkMember = () => document.querySelector("#member").checked;
+
+const applyingDiscount = (subTotal, discount) =>
+  discount ? Number(subTotal - (subTotal * discount) / 100) : Number(subTotal);
+
+
+const getTotalDue = () => {
+  const subTotalValue = Number(document.querySelector("#subtotal").value);
+  const hasDiscount = checkMember();
+  document.querySelector("#total").textContent = applyingDiscount(subTotalValue, hasDiscount ? 20 : 0);
+};
+
+document.querySelector("#getTotal").addEventListener("click", getTotalDue)
+
+
+
 /* ARRAY METHODS - Functional Programming */
 /* Output Source Array */
+let numbersArray = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+document.querySelector("#array").textContent = numbersArray;
 
 /* Output Odds Only Array */
-
+let oddNumbers = numbersArray.filter((number) => number % 2 !== 0);
+document.querySelector("#odds").textContent = oddNumbers;
 /* Output Evens Only Array */
+
+let evenNumbers = numbersArray.filter((number) => number % 2 === 0);
+
+document.querySelector("#evens").textContent = evenNumbers.join(", ");
+
+
 
 /* Output Sum of Org. Array */
 
+let sum = numbersArray.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+document.querySelector("#sumOfArray").textContent = sum;
+
+
+
 /* Output Multiplied by 2 Array */
 
+let multipliedArray = numbersArray.map((number) => number * 2);
+document.querySelector("#multiplied").textContent = multipliedArray.join(", ");
+
 /* Output Sum of Multiplied by 2 Array */
+
+let sumOfMultiplied = numbersArray
+  .map((number) => number * 2)
+  .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+document.querySelector("#sumOfMultiplied").textContent = sumOfMultiplied;
