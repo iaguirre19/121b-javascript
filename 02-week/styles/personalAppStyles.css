@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  p{
+    color: black;
+  }
+  
+  #weather {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .weather-card h2 {
+    margin-top: 0;
+  }
+
+  .weather-card h2 {
+    color: rgb(35, 35, 91);
+  }
+  .weather-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    background-size: cover;
+  }
+  
+  .sunny {
+    background-image: url('../images/5t2p_u77j_200625.jpg');
+    
+  }
+  
+  .cloudy {
+    background-image: url('../images/vecteezy_blue-watercolor-cloud-and-sky-hand-painted-watercolor-sky_34967167.jpg');
+  }
+  
+  .rainy {
+    background-image: url('../images/Moosoon\ with\ house.jpg');
+  }
+  
